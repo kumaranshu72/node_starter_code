@@ -1,9 +1,10 @@
-var express = require('express');
-var app = express();
-var db = require('./app/db/db');
-var BearController = require('./app/Controller/BearController');
+const express = require('express');
+const app = express();
+const db = require('./app/db/db');
+const routes = require('./app/routes/index');
+const router = express.Router();
 
-app.use('/api/v1', BearController);
+app.use('/api/v1', routes(router));
 
 app.get('*',function(req,res){
   res.status(404).send("Page Not Found");
