@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
-    "refactor": "https://hackernoon.com/restful-api-design-with-node-js-26ccf66eab09"
+    "test": "mocha --compilers js:babel-core/register",
+    "test-with-coverage": "nyc --reporter=html --reporter=text mocha --require babel-core/register",
+    "start": "nodemon --exec babel-node server.js",
+    "lint": "./node_modules/eslint/bin/eslint.js server.js",
+    "build": "babel lib -d dist/server.js",
+    "serve": "node dist/server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Anshu <kumaranshu72@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -17,6 +20,20 @@
     "mongoose": "^5.4.7"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.1",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.15.0",
+    "express-swagger-generator": "^1.1.11",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.9",
+    "nyc": "^13.1.0",
+    "@babel/preset-env": "^7.3.1",
+    "babel-core": "^6.26.3",
+    "swagger-ui-express": "^4.0.2"
   }
 }

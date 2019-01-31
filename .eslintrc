@@ -1,0 +1,49 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+      "browser": true
+  },
+  "extends": [
+      "airbnb-base"
+  ],
+  "rules": {
+    "brace-style": [1, "stroustrup"],
+    "semi": [1, "never"],
+    "quotes": [1, "single"],
+    "func-names": [0],
+    "no-console": [0],
+    "arrow-body-style": [1, "as-needed", { "requireReturnForObjectLiteral": false }],
+    "array-bracket-spacing": [2, "never"],
+    "object-curly-spacing": [2, "always"],
+    "object-curly-newline": [
+      "off",
+      {
+        "ObjectExpression": {
+          "minProperties": 0,
+          "multiline": true
+        },
+        "ObjectPattern": {
+          "minProperties": 0,
+          "multiline": true
+        }
+      }
+    ],
+    "object-property-newline": [
+      "error",
+      {
+        "allowMultiplePropertiesPerLine": true
+      }
+    ],
+    "space-before-blocks": [2, "always"],
+    "no-use-before-define": [2, { "functions": false, "classes": true }],
+    "new-cap": 0,
+    "max-len": [2, 120, { "ignoreTemplateLiterals": true  }],
+    "camelcase": [0],
+    "no-unused-vars": [2, { "args": "none" }],
+    "arrow-parens": [1, "as-needed"],
+    "no-plusplus": 0,
+    "class-methods-use-this": 0,
+    "no-tabs": 0,
+    "import/prefer-default-export": 0
+  }
+}
