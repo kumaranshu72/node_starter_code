@@ -29,14 +29,13 @@ let options = {
         }
     },
     basedir: __dirname, //app absolute path
-    files: ['*.js'] //Path to the API handle folder
+    files: ['./app/routes/*.js'] //Path to the API handle folder
 };
 
 expressSwagger(options)
 
 
-var swaggerUi = require('swagger-ui-express'),
-    swaggerDocument = require('./swagger.json');
+var swaggerUi = require('swagger-ui-express');
 
 
 router.use(bodyParser.urlencoded({ extended: true }));
