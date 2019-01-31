@@ -4,6 +4,7 @@ const db = require('./app/db/db');
 const routes = require('./app/routes/index');
 const router = express.Router();
 const expressSwagger = require('express-swagger-generator')(app);
+var bodyParser = require('body-parser');
 
 let options = {
     swaggerDefinition: {
@@ -37,6 +38,9 @@ expressSwagger(options)
 var swaggerUi = require('swagger-ui-express'),
     swaggerDocument = require('./swagger.json');
 
+
+router.use(bodyParser.urlencoded({ extended: true }));
+router.use(bodyParser.json());
 
 app.use('/api/v1', routes(router));
 
