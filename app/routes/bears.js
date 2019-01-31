@@ -1,4 +1,4 @@
-const BearController = require('../Controller/BearController');
+const BearController = require('../controllers/BearController');
 
 
 module.exports = (router) => {

@@ -1,4 +1,3 @@
-var express = require('express');
 var Bear = require('../models/bears');
 
 
